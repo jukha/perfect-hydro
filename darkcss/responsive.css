@@ -1,0 +1,68 @@
+@media(min-width:1201px) and (max-width:1600px){
+	
+}
+
+@media(min-width:1025px) and (max-width:1200px){
+	.navbar-brand a{font-size:45px;}
+	.navbar-light .navbar-nav .nav-link{font-size: 18px;}
+	.topbar-cart ul li a{font-size: 20px;}
+
+	/* 26-12-2023 Start */
+	header {top: 50px;}
+	/* 26-12-2023 End */
+}
+
+@media(min-width:992px) and (max-width:1024px){
+	.navbar-brand a{font-size:45px;}
+	.navbar-light .navbar-nav li{margin-right: 25px;}
+	.navbar-light .navbar-nav .nav-link{font-size: 18px;}
+	.topbar-cart ul li a{font-size: 20px;}
+
+	/* 26-12-2023 Start */
+	header {top: 50px;}
+	/* 26-12-2023 End */
+}
+
+@media(min-width:768px) and (max-width:991px){
+	.navbar-brand a{font-size:33px;}
+	.navbar-light .navbar-nav li{margin-right: 15px;}
+	.navbar-light .navbar-nav .nav-link{font-size: 16px;}
+	.topbar-cart ul li a{font-size: 20px;}
+
+	/* 26-12-2023 Start */
+	header {top: 50px;}
+	/* 26-12-2023 End */
+}
+
+@media(min-width:576px) and (max-width:767px){
+	
+}
+
+@media(min-width:448px) and (max-width:575px){
+	
+}
+
+@media(max-width:767px) {
+	.topbar-links ul{justify-content: center;}
+	.topbar-cart ul{justify-content: space-between;}
+	.topbar-links ul li{margin-right: 20px;}
+	.topbar-cart ul li.searchbtn-li{display: none;}
+	.topbar-cart ul li:nth-child(2){margin: 0;}
+	.mobile-search{display: block;padding:5px 15px;}
+	.searchbox{display: block;position: relative;top: 0;box-shadow: 0 0 0 1px #0006;width: 100%;max-width: 100%;left: 0;right: 0;}
+
+	.navbar-brand a{font-size: 42px;}
+	.navbar-light .navbar-nav{padding: 15px;}
+	.navbar-light .navbar-nav li{margin: 0;}
+	.navbar-light .navbar-nav .nav-link{padding: 10px 0;font-size: 16px;display: flex;align-items: center;}
+	.navbar-light .navbar-nav .nav-link i{display: block;margin-left: auto;}
+	.navbar .navbar-nav li .dropdown-menu{display: none !important;}
+	.navbar .navbar-nav li .dropdown-menu.show{display: block !important;}
+
+	/* 26-12-2023 Start */
+	header {top: 0; position: relative;}
+	#bannerdiv {padding: 40px 0 0;}
+	.header-main { position: relative; }
+	.topbar {position: relative;}
+	/* 26-12-2023 End */
+}
