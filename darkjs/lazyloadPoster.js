@@ -1,14 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var lazyFrame = document.querySelector(".lazy-frame");
-  var beforeImg = document.querySelector(".before-img");
-  var afterImg = document.querySelector(".after-img");
-
-  beforeImg.addEventListener("click", () => {
-    beforeImg.style.opacity = "0";
-    beforeImg.style.zIndex = "10";
-    afterImg.style.opacity = "1";
-    afterImg.style.zIndex = "20";
-  });
+  var loadingSpinner = document.querySelector("#loading-bar-spinner");
 
   if (lazyFrame) {
     var observer = new IntersectionObserver(
@@ -21,11 +13,22 @@ document.addEventListener("DOMContentLoaded", function () {
             iframe.allow = "autoplay; fullscreen";
             iframe.allowFullscreen = true;
 
-            lazyFrame.innerHTML = ""; // Clear the container
+            // Hide the iframe initially
+            iframe.style.opacity = "0";
+
+            // Append the iframe to the container
             lazyFrame.appendChild(iframe);
 
-            // You can also hide the poster image if you want
-            // lazyFrame.querySelector('.poster').style.display = 'none';
+            // Hide the loading spinner when the iframe is fully loaded
+            iframe.addEventListener("load", function () {
+              loadingSpinner.style.display = "none";
+              iframe.style.opacity = "1";
+            });
+
+            // Show the loading spinner while the iframe is loading
+            iframe.addEventListener("loadedmetadata", function () {
+              loadingSpinner.style.display = "block";
+            });
 
             // Unobserve the target once loaded
             observer.unobserve(lazyFrame);
@@ -38,12 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(lazyFrame);
   }
 
+  // Your other code...
+
   // Select all <p> and <h> tags
   var elementsToAnimate = document.querySelectorAll(
     "p, h1, h2, h3, h4, h5, h6"
   );
-
-
 
   // Callback function when an observed element enters the viewport
   var animateOnIntersection = function (entries, observer) {
