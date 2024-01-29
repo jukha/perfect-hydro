@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
   var lazyFrame = document.querySelector(".lazy-frame");
   var loadingSpinner = document.querySelector("#loading-bar-spinner");
+  var beforeImg = document.querySelector(".before-img");
+  var afterImg = document.querySelector(".after-img");
+
+
+  beforeImg.addEventListener("click", () => {
+    beforeImg.style.opacity = "0";
+    beforeImg.style.zIndex = "10";
+    afterImg.style.opacity = "1";
+    afterImg.style.zIndex = "20";
+  });
 
   if (lazyFrame) {
     var observer = new IntersectionObserver(
