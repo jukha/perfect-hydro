@@ -503,6 +503,9 @@ footer {
   color: #ffcf00; /*was white*/
   background-color: black !important;
 }
+.footer * {
+  opacity: 1 !important;
+}
 /*Footer*/
 
 /*chris*
@@ -612,6 +615,8 @@ h6 {
   opacity: 0;
   transition: opacity 0.3s ease; /* Adjust the duration and easing as needed */
 }
+
+
 
 /* Loader */
 #loading-bar-spinner.spinner {
