@@ -208,44 +208,6 @@
             </div>
         </footer>
 </div>
-
-
-
-
-        <!-- script -->
-        <script src="darkjs/jquery.js"></script>
-        <script src="darkjs/bootstrap.bundle.min.js"></script>
-        <script src="darkjs/lazyloadPoster.js"></script>
-
-        <script type="text/javascript">
-            /* **** sticky **** */
-            $(window).scroll(function () {
-            //   console.log($(window).scrollTop())
-              if ($(window).scrollTop() > 63) {
-                $('header').addClass('nav-new');
-                // $(".header-main").addClass("header-fixed");
-              }
-              if ($(window).scrollTop() < 64) {
-                $('header').removeClass('nav-new');
-                // $(".header-main").removeClass("header-fixed");
-              }
-            });
-
-            $(document).ready(function(){
-                if (window.innerWidth >= 786) {
-                    $(".navdrop.dropdown").hover(
-                        function() {
-                            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideDown("400");
-                            $(this).toggleClass('open');
-                        },
-                        function() {
-                            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideUp("400");
-                            $(this).toggleClass('open');
-                        }
-                    );
-                }              
-            });
-        </script>
-        <!-- End script -->
+        <script src="darkjs/main.js"></script>
     </body>
 </html>

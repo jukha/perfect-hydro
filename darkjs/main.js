@@ -1,9 +1,18 @@
+/* **** sticky **** */
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 63) {
+    document.querySelector("header").classList.add("nav-new");
+  }
+  if (window.scrollY < 64) {
+    document.querySelector("header").classList.remove("nav-new");
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   var lazyFrame = document.querySelector(".lazy-frame");
   var loadingSpinner = document.querySelector("#loading-bar-spinner");
   var beforeImg = document.querySelector(".before-img");
   var afterImg = document.querySelector(".after-img");
-
 
   beforeImg.addEventListener("click", () => {
     beforeImg.style.opacity = "0";
@@ -51,8 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(lazyFrame);
   }
 
-  // Your other code...
-
   // Select all <p> and <h> tags
   var elementsToAnimate = document.querySelectorAll(
     "p, h1, h2, h3, h4, h5, h6"
@@ -80,4 +87,26 @@ document.addEventListener("DOMContentLoaded", function () {
   elementsToAnimate.forEach(function (element) {
     animateObserver.observe(element);
   });
+
+  if (window.innerWidth >= 786) {
+    var navdropElements = document.querySelectorAll(".navdrop.dropdown");
+
+    navdropElements.forEach(function (navdrop) {
+      navdrop.addEventListener("mouseenter", function () {
+        var dropdownMenu = this.querySelector(
+          ".dropdown-menu:not(.in .dropdown-menu)"
+        );
+        dropdownMenu.style.display = "block";
+        this.classList.add("open");
+      });
+
+      navdrop.addEventListener("mouseleave", function () {
+        var dropdownMenu = this.querySelector(
+          ".dropdown-menu:not(.in .dropdown-menu)"
+        );
+        dropdownMenu.style.display = "none";
+        this.classList.remove("open");
+      });
+    });
+  }
 });
